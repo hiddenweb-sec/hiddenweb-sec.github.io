@@ -3,45 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikto Scan</title>
+    <title>Nikto Scanner</title>
 </head>
 <body>
-
-<h1>Nikto Web Scanner</h1>
-
-<form id="niktoForm">
-    <label for="target">Target URL:</label>
-    <input type="text" id="target" name="target" required>
-    <button type="submit">Scan</button>
-</form>
-
-<div id="scanResults"></div>
-
-<script>
-document.getElementById('niktoForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    var target = document.getElementById('target').value;
-    var resultsDiv = document.getElementById('scanResults');
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nikto_scan.php?target=' + encodeURIComponent(target), true);
-
-    xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 400) {
-            resultsDiv.innerHTML = '<h2>Scan Results:</h2><pre>' + xhr.responseText + '</pre>';
-        } else {
-            resultsDiv.innerHTML = '<p>Error: Unable to perform scan.</p>';
-        }
-    };
-
-    xhr.onerror = function() {
-        resultsDiv.innerHTML = '<p>Error: Unable to perform scan.</p>';
-    };
-
-    xhr.send();
-});
-</script>
-
+    <h1>Nikto Scanner</h1>
+    <form action="scan.php" method="post">
+        Target URL: <input type="text" name="url" required>
+        <input type="submit" value="Scan">
+    </form>
 </body>
 </html>
