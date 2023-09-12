@@ -1,7 +1,14 @@
-body {
+ <style>
+        body {
     font-family: Arial, sans-serif;
     margin: 0;
 }
+         .div1
+        {
+            width: 1190px;
+            height: 80px;
+            background-image: radial-gradient(circle, #71fdf2, #0e5355, #0167bb);
+        }
 
 .container {
     max-width: 1200px;
@@ -17,7 +24,9 @@ body {
 }
 
 .logo {
-    font-size: 24px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
 }
 
 .nav a {
@@ -81,7 +90,7 @@ body {
   background: none;
   perspective: 2em;
   font-family: "Raleway", sans-serif;
-  font-size: 2em;
+  font-size: 26px;
   font-weight: 900;
   letter-spacing: 1em;
 
@@ -938,3 +947,5 @@ body {
     font-size: 1em;
   }
 }
+
+    </style>
